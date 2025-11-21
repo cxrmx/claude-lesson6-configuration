@@ -21,7 +21,7 @@ public class DevConfig {
 
     @Bean
     public boolean debugMode() {
-        System.out.println("DEV_INITIALIZER");
+        System.out.println("[DEV] Debug mode: ENABLED");
         return true;
     }
 }

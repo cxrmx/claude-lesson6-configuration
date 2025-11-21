@@ -86,7 +86,7 @@ public class DemoRunner {
 
     private void demo5() {
         printSection("DEMO 5: AVAILABLE BOOKS");
-        List<Book> books = libraryService.listAllBooks();
+        List<Book> books = libraryService.listAvailableBooks();
         if (books.isEmpty()) {
             System.out.println("Library is empty");
             return;

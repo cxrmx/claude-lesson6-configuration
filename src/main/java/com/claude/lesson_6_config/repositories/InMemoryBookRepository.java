@@ -25,11 +25,12 @@ public class InMemoryBookRepository implements BookRepository {
             System.out.println("[DEV] Cannot save book. Book is null");
             return;
         }
+        Book bookToSave = book;
         if (book.getId() == null) {
-            book = new Book(idCounter++, book.getTitle(), book.getAuthor(), book.getIsbn());
+            bookToSave = new Book(idCounter++, book.getTitle(), book.getAuthor(), book.getIsbn());
         }
-        books.put(book.getId(), book);
-        System.out.println("[DEV] Saved book: " + book.getTitle());
+        books.put(bookToSave.getId(), bookToSave);
+        System.out.println("[DEV] Saved book: " + bookToSave.getTitle());
     }
 
     public Book findById(Long id) {

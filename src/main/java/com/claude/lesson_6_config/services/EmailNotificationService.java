@@ -8,13 +8,13 @@ import org.springframework.stereotype.Service;
 @Profile("prod")
 public class EmailNotificationService implements NotificationService{
     private final String emailHost;
-    private final String emailPort;
+    private final int emailPort;
 
     public EmailNotificationService(
-            @Value("${notification.email.port}") String emailPort,
+            @Value("${notification.email.port}") int emailPort,
             @Value("${notification.email.host}") String emailHost
     ) {
-        this.emailPort = emailPort;
+        this.emailPort =  emailPort;
         this.emailHost = emailHost;
         System.out.printf("\n[PROD] EmailNotificationService initialized (Host: %s, Port: %s)", emailHost, emailPort);
     }

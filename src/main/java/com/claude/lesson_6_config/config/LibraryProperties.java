@@ -1,6 +1,5 @@
 package com.claude.lesson_6_config.config;
 
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
@@ -44,11 +43,9 @@ public class LibraryProperties {
         this.openingHours = openingHours;
     }
 
-    public class OpeningHours{
-        @Value("${library.opening-hours.weekdays}")
-        private String weekdays;
-        @Value("${library.opening-hours.weekends")
-        private String weekends;
+    public static class OpeningHours{
+        private String weekdays = "11:00-17:00";
+        private String weekends = "13:00-14:00";
 
         public String getWeekdays() {
             return weekdays;
